@@ -1,74 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product list with cart</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Product list with cart</title>
 
-  Desserts
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
+    <!-- TAILWIND -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              headingRose: "hsl(14, 65%, 9%)",
+              lightRose: "hsl(7, 20%, 60%)",
+              customRed: "hsl(14, 86%, 42%)",
+              borderBtn: "hsl(14, 25%, 72%)",
+              bgRose: "hsl(13, 31%, 94%)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- main -->
+    <div class="flex flex-col items-center p-8 bg-bgRose">
+      <!-- two cols -->
+      <div class="flex flex-wrap">
+        <!-- product cards -->
+        <div class="w-full mb-4 md:w-2/3 lg:w-2/3">
+          <p class="font-bold text-3xl text-headingRose py-4">Desserts</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="waffle" src="./assets/images/image-waffle-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Waffle</p>
+              <p class="text-md text-headingRose font-bold">Waffle with Berries</p>
+              <span class="text-customRed font-bold text-sm">$6.50</span>
+            </div>
+            </div>
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Vanilla Bean" src="./assets/images/image-creme-brulee-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Crème Brûlée</p>
+              <p class="text-md text-headingRose font-bold">Vanilla Bean Crème Brûlée</p>
+              <span class="text-customRed font-bold text-sm">$7.00</span>
+              </div>
+            </div>
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Macaron" src="./assets/images/image-macaron-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Macaron</p>
+              <p class="text-md text-headingRose font-bold">Mix of Five Macaron</p>
+              <span class="text-customRed font-bold text-sm">$8.00</span>
+              </div>
+            </div>
 
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Tiramisu" src="./assets/images/image-tiramisu-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Tiramisu</p>
+              <p class="text-md text-headingRose font-bold">Classic Tiramisu</p>
+              <span class="text-customRed font-bold text-sm">$5.50</span>
+              </div>
+            </div>
 
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Pistachio" src="./assets/images/image-baklava-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Baklava</p>
+              <p class="text-md text-headingRose font-bold">Pistachio Baklava</p>
+              <span class="text-customRed font-bold text-sm">$4.00</span>
+              </div>
+            </div>
 
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Lemon Meringue Pie" src="./assets/images/image-meringue-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Pie</p>
+              <p class="text-md text-headingRose font-bold">Lemon Meringue Pie</p>
+              <span class="text-customRed font-bold text-sm">$5.00</span>
+              </div>
+            </div>
 
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Cake" src="./assets/images/image-cake-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Cake</p>
+              <p class="text-md text-headingRose font-bold">Red Velvet Cake</p>
+              <span class="text-customRed font-bold text-sm">$4.50</span>
+              </div>
+            </div>
 
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Salted Caramel Brownie" src="./assets/images/image-brownie-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Brownie</p>
+              <p class="text-md text-headingRose font-bold">Salted Caramel Brownie</p>
+              <span class="text-customRed font-bold text-sm">$5.50</span>
+              </div>
+            </div>
+            
+            <div class="mb-2">
+              <img class="img-fluid rounded-xl w-full" alt="Vanilla Panna Cotta" src="./assets/images/image-panna-cotta-desktop.jpg" />
+              <div class="cart-btn flex justify-center items-center relative">
+                <button class="flex flex-row justify-center items-center absolute inset-x-26 bottom--2 font-bold text-headingRose text-sm w-40 py-2 bg-white border border-borderBtn rounded-full shadow-lg hover:border-customRed hover:text-customRed">
+                  <img class="img-fluid px-2" alt="add-to-cart" srcset="./assets/images/icon-add-to-cart.svg" />
+                  Add to Cart
+                </button>
+              </div>       
+              <div class="text pt-8">
+              <p class="text-sm text-lightRose">Panna Cotta</p>
+              <p class="text-md text-headingRose font-bold">Vanilla Panna Cotta</p>
+              <span class="text-customRed font-bold text-sm">$6.50</span>
+              </div>
+            </div>
 
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
+          </div>
+        </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <!-- cart -->
+        <div class="cart-section p-4 mb-4 ml-4 w-80 drop-shadow-lg bg-white h-72 rounded-xl">
+          <p class="font-bold text-customRed text-xl">Your Cart (0)</p>
+          <div class="flex flex-col justify-center items-center py-4">
+            <img class="img-fluid py-2" alt="your cart is empty" src="./assets/images/illustration-empty-cart.svg" />
+          <p class="font-semibold text-lightRose items-center">Your added items will appear here</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/susanGithaigaN/">Susan Githaiga</a>.
+    </div>
+  </body>
 </html>
